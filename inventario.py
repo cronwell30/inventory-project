@@ -34,8 +34,18 @@ while True:
         for i in contado:
           suma=sum(contado)
         print(suma)
-        if suma==quantity:
+        if suma>=quantity:
           terminar=str(input('A encotrado todos los productos deceas terminar (y/n): '))
           if terminar=='y':
             print(f'valor de inventario {suma*coste}')
             break
+  elif respuesta == 4:
+    for i in products:
+      print(products[i])
+  elif respuesta == 5:
+    venta=(str(input('Producto a vender: ')))
+    if venta in products:
+      cantidad=int(input('Cabntidad a vender: '))
+      menos = quantity - cantidad
+      quantity.replace(menos)
+      print(products)
