@@ -6,7 +6,8 @@ while True:
     1. Añadir productos.
     2. Buscar producto.
     3. Inventario.
-    4. Ver productos.''')
+    4. Ver productos.
+    5. Venta''')
   
   respuesta=int(input('Ingrese su opcion: '))
   
@@ -22,7 +23,7 @@ while True:
     search=str(input('Nombre del producto a buscar: '))
     if search in products:
       print(f'Detalles de producto {products[search]}')
-  elif respuesta == 3:
+  elif respuesta ==3:
     search=str(input('Producto a inventariar: '))
     if search in products:
       contado=[]
@@ -45,7 +46,9 @@ while True:
   elif respuesta == 5:
     venta=(str(input('Producto a vender: ')))
     if venta in products:
-      cantidad=int(input('Cabntidad a vender: '))
-      menos = quantity - cantidad
-      quantity.replace(menos)
-      print(products)
+      cantidad=int(input('Cantidad a vender: '))
+      if cantidad<=quantity:
+        quantity-=cantidad
+      else:
+        print('No cuentas con la cantidad suficiente para la venta de este produnto')
+    print(products)
