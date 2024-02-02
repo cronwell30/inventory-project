@@ -17,7 +17,7 @@ while True:
     code=int(input('Codigo de producto: '))
     quantity=int(input('Cantidad de producto: '))
     coste=float(input('Precio de venta :$'))
-    products [name]=code,quantity,coste
+    products [name]=[code,quantity,coste]
     print(products)
   elif respuesta == 2:
     search=str(input('Nombre del producto a buscar: '))
@@ -40,15 +40,21 @@ while True:
           if terminar=='y':
             print(f'valor de inventario {suma*coste}')
             break
+    else:
+      print(f'El producto {search} no se encuentra en tu inventario')
   elif respuesta == 4:
     for i in products:
       print(products[i])
   elif respuesta == 5:
     venta=(str(input('Producto a vender: ')))
+    print(f'Estas vendiendo {venta} , {products}')
     if venta in products:
       cantidad=int(input('Cantidad a vender: '))
+      print(f'Vendiste {cantidad} ,{quantity}, {quantity-cantidad}  piezas')
       if cantidad<=quantity:
-        quantity-=cantidad
+        print(f'restando')
+        quantity= quantity-cantidad
+        products [venta][1] = quantity
       else:
         print('No cuentas con la cantidad suficiente para la venta de este produnto')
     print(products)
