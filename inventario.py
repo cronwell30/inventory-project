@@ -1,3 +1,4 @@
+import pandas as pd 
 products={}
 flag=True
 
@@ -32,10 +33,10 @@ while True:
       while contado != quantity:
         encontrado=int(input('Cantidad encontrada: '))
         contado.append(encontrado)
-        print(contado)
+        print(f'Has encontrado {contado}')
         for i in contado:
           suma=sum(contado)
-        print(suma)
+        print(f'Total encontrado {suma}')
         if suma>=quantity:
           terminar=str(input('A encotrado todos los productos deceas terminar (y/n): '))
           if terminar=='y':
@@ -54,6 +55,8 @@ while True:
       if cantidad<=quantity:
         quantity= quantity-cantidad
         products [venta][1] = quantity
+        print(f'Has vendido {venta}')
+        print(f'Haora cuentas con {quantity} pz')
       else:
         print('No cuentas con la cantidad suficiente para la venta de este produnto')
   elif respuesta == 6:
@@ -63,5 +66,4 @@ while True:
       cantidad=int(input('Cantidad a comprar: '))
       quantity=quantity+cantidad
       products [compra][1]=quantity
-      print(products)
-    print(products)
+      print(f'Ahora cuentas con {quantity} de {compra}')
