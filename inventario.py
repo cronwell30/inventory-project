@@ -1,4 +1,3 @@
-import pandas as pd 
 products={}
 flag=True
 
@@ -31,12 +30,17 @@ while True:
       contado=[]
       suma=0
       while contado != quantity:
+        print('Digita 0 para terminar en cualquier momento')
         encontrado=int(input('Cantidad encontrada: '))
         contado.append(encontrado)
         print(f'Has encontrado {contado}')
         for i in contado:
           suma=sum(contado)
         print(f'Total encontrado {suma}')
+        if encontrado == 0:
+          print(f'Total encontrado {suma}')
+          print(f'Valor de inventario {suma*coste}')
+          break
         if suma>=quantity:
           terminar=str(input('A encotrado todos los productos deceas terminar (y/n): '))
           if terminar=='y':
